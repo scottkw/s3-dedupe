@@ -1,6 +1,6 @@
 # s3-dedupe
 
-Script to remove duplicate files from a given AWS S3 bucket.
+This is a Python script to remove duplicate files from a given AWS S3 bucket.  It determines a file to be a duplicate by it's etag and it's file size.  This is done to insure that any collisions that may occur with an etag are accounted for.  Obviously, this method does not take into account file names.  For instance, if "file1.txt" and "file2.txt" have the same etag and size, the code will consider them duplicates and delete the latter (alphabetical order) of the two.  The code also looks across an entire bucket.  It does not work, in its current form, on a specific folder.
 
 ## Usage
 
